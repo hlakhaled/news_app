@@ -29,12 +29,7 @@ class _SplashViewState extends State<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffE9EEFA),
-      body: Center(
-        child: Text(
-          "News",
-          style: Styles.style64SemiBold,
-        ),
-      ),
+      body: Center(child: Text("News", style: Styles.style64SemiBold)),
     );
   }
 }

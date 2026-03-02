@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/data/models/news_model.dart';
+
+import 'package:news_app/data/models/news_model/article.dart';
 import 'package:news_app/views/widgets/article_author.dart';
 import 'package:news_app/views/widgets/article_body.dart';
 import 'package:news_app/views/widgets/article_title.dart';
 
 class ArticleContent extends StatelessWidget {
   const ArticleContent({super.key, required this.newsModel});
-  final NewsModel newsModel;
+  final Article newsModel;
 
   @override
   Widget build(BuildContext context) {

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils/constants/assets.dart';
-import 'package:news_app/data/models/news_model.dart';
+
+import 'package:news_app/data/models/news_model/article.dart';
 import 'package:news_app/views/widgets/article_content.dart';
 
 class ArticleDetailsView extends StatelessWidget {
   const ArticleDetailsView({super.key, required this.newsModel});
 
-  final NewsModel newsModel;
+  final Article newsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +16,14 @@ class ArticleDetailsView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-  
           SizedBox(
             height: imageHeight,
             width: double.infinity,
-            child: Image.asset(Assets.assetsImagesCover, fit: BoxFit.cover),
+            child: newsModel.urlToImage != null
+                ? Image.network(newsModel.urlToImage!, fit: BoxFit.cover)
+                : Image.asset(Assets.assetsImagesImage, fit: BoxFit.cover),
           ),
 
-     
           SingleChildScrollView(
             child: Column(
               children: [
